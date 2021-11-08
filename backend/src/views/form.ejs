@@ -1,0 +1,11 @@
+<% formtitle= form.name%>
+<%- include( "partials/head", {title :formtitle} ) -%>
+  <%if (form.isActive){%>
+     <%- include( "partials/formScriptStyle" ) -%>
+  <%#}%> 
+  <%}else {%>
+      <%- include("partials/formInactive") -%>
+  <%}%>
+   <%# form.formbody %>
+   <%# include( "../public/js/form.js" ) -%>  
+<%- include( "partials/foot" ) -%>

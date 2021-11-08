@@ -1,0 +1,79 @@
+<form action="/response/<%-form.id %>"  method="post" id="FormPage"></form> 
+<script>
+    const id= '<%-form.id %>';
+    let p= '<%-form.formbody %>';
+    let formName= '<%- form.name%>';
+    let k= document.getElementById('FormPage');
+    k.innerHTML= p.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/Title of form/,formName); 
+    
+    var btn= document.createElement('input');
+    let div= document.createElement('div');
+    btn.setAttribute('type','submit');
+    btn.setAttribute('id','Submit');
+    div.setAttribute('class','Form-group');
+    div.innerHTML= btn.outerHTML;
+    k.appendChild(div);
+</script>
+<style>
+  body{
+  background-color:aquamarine;   
+ }
+ *{
+    box-sizing: border-box;
+  }
+  #FormPage{
+    padding:1em;
+    background-color: blue;
+  }
+  .SelectInput{
+      margin:10px;
+      display: inline-block;
+      text-align: left;
+  }
+   #parentForm{
+    border:1px solid black;
+    padding:1em;  
+    background-color:;
+  }
+  #FormHeading{
+    Font-size:2em;
+    text-align:center;
+  }
+  .Form-group{
+    margin:0 auto;
+    padding:1em;
+    border:1px solid black;
+    max-width:700px;
+  }
+  #FormHeading, .Form-group{
+      background-color: aqua;
+  }
+  .UserEdit{
+    padding:10px;
+  }
+  input{
+    margin-left:1em;
+    margin: auto 10px;
+    padding:10px;
+    width:95%;
+    border:none;
+  }
+  .FormCreator input{
+     margin:0 10px;
+  }
+  .btn{
+    margin:5px;
+    padding:0 3px;
+    border:1px solid black;
+    color:aquamarine;
+  }
+  #Submit{
+    display: flex;
+    border-radius:1em;
+    justify-content: center;
+    text-align:center; 
+  }
+  #Submit:hover{
+    cursor: pointer;
+  }
+</style>
